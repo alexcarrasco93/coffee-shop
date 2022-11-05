@@ -1,0 +1,84 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+    padding: v.$divider 0;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include m.tablet {
+        min-height: 70rem;
+    }
+
+    &::before {
+        content: '';
+        background-color: v.$black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .6;
+    }
+
+    &__container {
+        position: relative;
+    }
+
+    &__bg {
+        background-image: url(../img/header_inicio.jpg);
+
+        &--about-us {
+            background-image: url(../img/header_nosotros.jpg);
+        }
+
+        &--process {
+            background-image: url(../img/header_proceso.jpg);
+        }
+
+        &--menu {
+            background-image: url(../img/header_menu.jpg);
+        }
+
+        &--gallery {
+            background-image: url(../img/header_galeria.jpg);
+        }
+
+        &--contact {
+            background-image: url(../img/header_contacto.jpg);
+        }
+    }
+
+    &__grid {
+        display: flex;
+        flex-direction: column;
+
+        @include m.tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__logo {
+        width: 50%;
+        margin: 0 auto;
+
+        @include m.tablet {
+            width: 20rem;
+            margin: 0;
+        }
+    }
+
+    &__heading {
+        text-align: center;
+        color: v.$white;
+        text-transform: uppercase;
+        margin-top: 5rem;
+
+        @include m.tablet {
+            margin-top: 10rem
+        }
+    }
+}

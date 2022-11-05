@@ -1,0 +1,42 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.process {
+    margin-bottom: v.$divider;
+    @include m.tablet {
+        display: flex;
+        gap: v.$divider;
+        align-items: center;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__txt,
+    &__img {
+        flex: 1;
+    }
+
+    &__txt {
+        margin-top: 1rem;
+    }
+
+    &__heading {
+        margin: 0;
+        text-align: left;
+        color: v.$primary;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 5px;
+            background-color: v.$secondary;
+        }
+    }
+}

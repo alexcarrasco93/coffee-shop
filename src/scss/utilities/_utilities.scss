@@ -1,0 +1,17 @@
+@use 'base/variables' as v;
+
+.txt-center {
+    text-align: center;
+}
+
+.bg-white {
+    background-color: v.$white;
+}
+
+.mt-n10 {
+    margin-top: -10rem;
+}
+
+.pb-0 {
+    padding-bottom: 0;
+}
